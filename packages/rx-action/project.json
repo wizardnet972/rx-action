@@ -1,0 +1,50 @@
+{
+  "name": "rx-action",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/rx-action/src",
+  "prefix": "rx-action",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "packages/rx-action/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "packages/rx-action/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "packages/rx-action/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/rx-action/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/rx-action/**/*.ts",
+          "packages/rx-action/**/*.html"
+        ]
+      }
+    }
+  }
+}
