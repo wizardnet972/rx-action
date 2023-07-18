@@ -5,6 +5,10 @@
   "scripts": {},
   "private": true,
   "author": "Shlomi Levi <wizatdnet972@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wizardnet972/rx-action.git"
+  },
   "dependencies": {
     "@angular/animations": "~16.1.0",
     "@angular/common": "~16.1.0",
